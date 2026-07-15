@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: main
+    description: "Raw flight data loaded from BTS CSV files"
+    tables:
+      - name: raw_flights
+        description: "Raw on-time performance data for Jan-Jun 2025"
+        columns:
+          - name: FL_DATE
+            description: "Date of the flight"
+          - name: OP_UNIQUE_CARRIER
+            description: "Airline carrier code"
+          - name: ORIGIN
+            description: "Origin airport code"
+          - name: DEST
+            description: "Destination airport code"
+          - name: CANCELLED
+            description: "Whether the flight was cancelled"

@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_flights
+    description: "Cleaned and renamed staging model for BTS on-time flight performance data Jan-Jun 2025"
+    columns:
+
+    - name: flight_date
+      description: "Date of the flight"
+      tests:
+        - not_null
+
+    - name: airline_code
+      description: "Unique carrier code e.g. AA, DL, UA"
+      tests:
+        - not_null
+        - accepted_values:
+            arguments:
+              values: ['AA', 'AS', 'B6', 'DL', 'F9', 'G4', 'HA', 'MQ', 'NK', 'OH', 'OO', 'UA', 'WN', 'YX']
+
+    - name: origin_airport_code
+      description: "Origin airport code"
+      tests:
+        - not_null
+
+    - name: dest_airport_code
+      description: "Destination airport code"
+      tests:
+        - not_null
+
+    - name: is_cancelled
+      description: "Whether the flight was cancelled"
+      tests:
+        - not_null
