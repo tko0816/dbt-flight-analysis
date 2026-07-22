@@ -47,3 +47,17 @@ models:
         tests:
           - not_null
           - unique
+
+  - name: stg_airports
+    description: "Reference table of all unique airports derived from flight origins and destinations"
+    columns:
+      - name: airport_code
+        description: "Three letter airport code e.g. JFK, LAX, DEN"
+        tests:
+          - not_null
+          - unique
+
+      - name: city
+        description: "City the airport is located in"
+        tests:
+          - not_null
