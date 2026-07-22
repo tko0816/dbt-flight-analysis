@@ -32,3 +32,18 @@ models:
       description: "Whether the flight was cancelled"
       tests:
         - not_null
+
+  - name: stg_airlines
+    description: "Reference table mapping airline codes to full airline names"
+    columns:
+      - name: airline_code
+        description: "Two letter unique carrier code"
+        tests:
+          - not_null
+          - unique
+
+      - name: airline_name
+        description: "Full airline name"
+        tests:
+          - not_null
+          - unique
